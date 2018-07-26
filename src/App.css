@@ -1,36 +1,31 @@
 .App {
-text-align: center;
+ margin: 0%;
+ margin-top: 10px;
+ box-sizing: border-box;
+ font-family: sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
 .App-header {
-  background-color: rgb(0, 64, 65);
-  height: 150px;
-  padding: 10px;
+  background: rgb(6, 141, 141);
   color: white;
+  position: relative;
+  text-align: center;
 }
 
-.App-title {
-  
-  font-size: 1.5em;
-  color: rgb(218, 205, 205);
+.side-bar{
+  opacity: 0.9;
+  position: fixed;
+  height: 100%;
+  width: 0%;
+  background: #333;
+  z-index: 99;
+  transition: 0.5s;
+}
+.sub-side-bar{
+  display: none;
+}
+.thongtincauhoi{
+  text-align: center;
 }
 
-.App-intro {
-  font-size: large;
-}
-.About {
-  font-size: large;
-}
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.Sidebar{
-  padding: 10em;
-  
-}
