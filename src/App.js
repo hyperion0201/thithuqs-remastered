@@ -1,20 +1,17 @@
 import React, {Component} from 'react';
 import './App.css';
-import { Label, Button } from 'react-bootstrap';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Clock from './components/Clock';
 import Footer from './components/Footer';
-import Countdown from './components/Countdown';
+import quest1 from './components/Q1';
+import Main from './components/Main';
 class App extends Component{
   render(){
     return(
       <div className="App">
-      <Header></Header>
-      <h5 className = "thongtincauhoi">Câu hỏi và đáp án của mỗi học phần mình dựa vào <a href="cc.com">đây</a></h5>
-      <Clock></Clock>
-      <br/>
-      <Countdown></Countdown>
+      <Sidebar></Sidebar>
+     <Main details={quest1}/>
       <Footer></Footer>
       </div>
     )
