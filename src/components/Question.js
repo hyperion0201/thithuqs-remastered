@@ -1,6 +1,4 @@
 import React from 'react'
-import quest1 from './Q1';
-
 class Question extends React.Component{
   constructor (props){
     super(props);
@@ -39,12 +37,14 @@ class Question extends React.Component{
 
     render(){
       var qname = "option" + this.props.number;
-      var qoptions = this.props.questions.options.map((option) => 
-        <div><input type="radio" name={qname} value={option.text} onChange={this.handleChange}/>{option.text}</div>);
-
+      var qoptions = this.props.options.map(function(option) {
+        return(
+          <div><input type="radio" name={qname} value={option.text}/>{option.text}</div>
+      )
+      }); 
     return(
       <div>
-        <div><strong>Câu hỏi  </strong>: {this.props.question}</div>
+        <div><strong>Câu hỏi </strong>: {this.props.question}</div>
         <div>{qoptions}</div>
         <br/>
       </div>

@@ -16,7 +16,7 @@ class QuestionPaper extends React.Component{
     this.props.onSubmitted( result );
   }
 
-  render(){
+  render(){ 
     var questionAnswers = this.props.questions.map(function(question){
       return(
         <tr><td><Question question={question.qtext}

@@ -1,7 +1,6 @@
 import React from 'react'
 import QuestionPaper from './QuestionPaper';
-import quest1 from './Q1'
-import Question from './Question';
+
 
 class Main extends React.Component{
   constructor(props){
