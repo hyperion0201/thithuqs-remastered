@@ -1,19 +1,16 @@
 import React, {Component} from 'react';
 import './App.css';
-import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import Clock from './components/Clock';
 import Footer from './components/Footer';
-import quest1 from './components/Q1';
-import Main from './components/Main';
+import Content from './components/Content';
 
+import store from './store/stateStore';
 class App extends Component{
   render(){
     return(
       <div>
-      <Sidebar/>
-      <Header/>
-      
+      <Sidebar store = {store}/>
+      <Content store={store}></Content>
      <Footer/>
       </div>
     );

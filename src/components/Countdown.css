@@ -5,5 +5,7 @@
   text-align: center;
 }
 .time-info span{
+  border-radius: 15px;
+  padding:10px;
   background:aqua
 }

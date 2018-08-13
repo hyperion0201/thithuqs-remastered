@@ -1,12 +1,10 @@
 import React from 'react'
 import QuestionPaper from './QuestionPaper';
+import Countdown from './Countdown';
 
 
-class Main extends React.Component{
-  constructor(props){
-    super(props);
-    this.state={totalscore:0, testSubmitted:false};
-  }
+class MainContent extends React.Component{
+  
   handleChange(result){
     this.setState ({totalscore :result.totalscore, testSubmitted:true});
   }
@@ -15,15 +13,18 @@ class Main extends React.Component{
     this.props.details.questions.map(function(question){
       totalmarks += question.marks;
     });
+
     return(
       <div>					
-        <h1>{this.props.details.name}</h1>
+      <Countdown/>
+        <h2>{this.props.details.name}</h2>
         <hr className="divider"/>
         <div>{this.props.details.description}</div>
         <table className="table">
           <tr>
             <td className="col-md-9">
-            <QuestionPaper questions={this.props.details.questions} applyIncorrectMarking={this.props.details.applyIncorrectMarking}
+            <QuestionPaper questions={this.props.details.questions}
+             applyIncorrectMarking={this.props.details.applyIncorrectMarking}
              onSubmitted={this.handleChange}/>
              </td>
              <td className="col-md-3">
@@ -32,7 +33,8 @@ class Main extends React.Component{
         </table>
       </div>
     );
+   
   }
 }
 
-export default Main;
+export default MainContent;

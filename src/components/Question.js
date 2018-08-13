@@ -37,9 +37,12 @@ class Question extends React.Component{
 
     render(){
       var qname = "option" + this.props.number;
-      var qoptions = this.props.options.map(function(option) {
+      var qoptions = this.props.options.map(function(option,i) {
         return(
-          <div><input type="radio" name={qname} value={option.text}/>{option.text}</div>
+          <div><input type="radio"
+           name={qname}
+           value={option.text}
+           key={i}/>{option.text}</div>
       )
       }); 
     return(

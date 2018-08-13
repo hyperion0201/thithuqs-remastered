@@ -58,9 +58,9 @@ class Countdown extends Component{
   render(){
     return(
       <div className="count-down">
-      <Button bsStyle="primary" onClick = {this.startTimer}>Bắt đầu thi</Button>
+      {this.startTimer()}
       <br/><br/>
-      <p className="time-info"> <span>Thời gian còn : {this.state.time.m} phút {this.state.time.s} giây</span></p>
+      <p className="time-info"> <span>{this.state.time.m} : {this.state.time.s} </span></p>
       </div>
     );
   }

@@ -1,5 +1,4 @@
-import React from 'react'
-import quest1 from './Q1';
+import React from 'react' 
 import Question from './Question';
 
 class QuestionPaper extends React.Component{
@@ -17,7 +16,7 @@ class QuestionPaper extends React.Component{
   }
 
   render(){ 
-    var questionAnswers = this.props.questions.map(function(question){
+    var questionAnswers = this.props.questions.map(function(question,i){
       return(
         <tr><td><Question question={question.qtext}
          number={question.no}
@@ -25,7 +24,8 @@ class QuestionPaper extends React.Component{
            answer={question.ans}
             marks={question.marks} 
             applyIncorrectMarking ={this.props.applyIncorrectMarking}
-             onAnswered={this.handleChange}/></td></tr>
+             onAnswered={this.handleChange}
+             key={i}/></td></tr>
         );
     }, this);
     return(
