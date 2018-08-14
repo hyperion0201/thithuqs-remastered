@@ -8,6 +8,7 @@ class MainContent extends React.Component{
   handleChange(result){
     this.setState ({totalscore :result.totalscore, testSubmitted:true});
   }
+  authencate
   render(){
     var totalmarks = 0;
     this.props.details.questions.map(function(question){

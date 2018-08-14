@@ -4,12 +4,22 @@ import { Glyphicon } from "react-bootstrap";
 import MainContent from "./MainContent";
 import quest1 from "./Q1";
 import { connect } from "react-redux";
-class Content extends React.Component {
+import Spinner from 'react-spinkit';
+import LoadingScreen from 'react-loading-screen'
+
+class Content extends React.Component { 
   constructor(props) {
     super(props);
+    this.state ={loaded:true}
+  }
+  componentDidMount(){
+    setTimeout(() => this.setState({ loaded: false }), 1500); 
+  }
+  handleLoading(){
+    this.setState({loaded:true});
   }
   render() {
-    console.log(this.props.startTest);
+   // console.log(this.props.startTest);
       if (this.props.startTest === false) {
       return (
         <div className="myHeader">
@@ -37,7 +47,15 @@ class Content extends React.Component {
         </div>
       );
     } else {
-      return <MainContent details={quest1} />;
+     const { loaded } = this.state;
+     if (loaded) {
+       return null;
+     }
+     else {
+       return (
+         <MainContent details={quest1}/>
+       );
+     }
     }
   }
 }
