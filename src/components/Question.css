@@ -1,0 +1,11 @@
+.qNumber {
+  font-size: 13px;
+  color: forestgreen;
+  font-weight: bold;
+}
+.optionGroup{
+  font-weight: normal;
+}
+label{
+  font-weight: normal;
+}
