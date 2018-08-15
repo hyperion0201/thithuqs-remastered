@@ -59,7 +59,6 @@ class Countdown extends Component{
     return(
       <div className="count-down">
       {this.startTimer()}
-      <br/><br/>
       <p className="time-info"> <span>{this.state.time.m} : {this.state.time.s} </span></p>
       </div>
     );

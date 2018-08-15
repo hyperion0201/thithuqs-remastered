@@ -1,12 +1,16 @@
 import React from "react";
 import "./Content.css";
 import { Glyphicon } from "react-bootstrap";
-import MainContent from "./MainContent";
-import quest1 from "./Q1";
 import { connect } from "react-redux";
 import Spinner from 'react-spinkit';
 import LoadingScreen from 'react-loading-screen'
-
+import Question from "./Question";
+import store from '../store/stateStore';
+import quest3 from './Question3';
+import quest1 from './Question1';
+import quest2 from './Question2';
+import Countdown from './Countdown';
+import Footer from "./Footer";
 class Content extends React.Component { 
   constructor(props) {
     super(props);
@@ -44,6 +48,9 @@ class Content extends React.Component {
               </a>
             </h4>
           </div>
+          <div className="footer">
+            <Footer/>
+          </div>
         </div>
       );
     } else {
@@ -53,7 +60,13 @@ class Content extends React.Component {
      }
      else {
        return (
-         <MainContent details={quest1}/>
+         <div>
+         <Countdown/>
+        <Question store={store}
+                  questionArray1={quest1}
+                  questionArray2={quest2}
+                  questionArray3={quest3}/>
+         </div>
        );
      }
     }

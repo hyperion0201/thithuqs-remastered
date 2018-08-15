@@ -69,8 +69,7 @@ class Sidebar extends React.Component{
 }
 
 const mapStateToProps = (state) => ({
-  isNavOpen: state.isNavOpen,
-  questQuery: state.questQuery
+  isNavOpen: state.isNavOpen
   // wrap ({}) because mapStateToProps return an object.
 });
 
