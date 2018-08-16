@@ -2,13 +2,21 @@ import React from 'react'
 import { connect } from 'react-redux'
 import "./Question.css"
 import { Button } from 'react-bootstrap'
+import Countdown from './Countdown';
+import Spinner from 'react-spinkit'
 class Question extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { loaded: false };
     this.shuffleQuest = this.shuffleQuest.bind(this);
     this.randomList = this.randomList.bind(this);
     this.printQuest = this.printQuest.bind(this);
     this.saveQuest = this.saveQuest.bind(this);
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ loaded:true });
+    }, 3000);
   }
   shuffleQuest = (questList) => {
       let counter = questList.length;
@@ -37,7 +45,7 @@ class Question extends React.Component {
       let qname = "quest" + i;
       return (
         <div key={i} 
-              className="contentLayout">
+              className="questLayout">
           <h5 className="qNumber">
             Câu {i+1}: {question.q}{" "}
           </h5>
@@ -69,6 +77,13 @@ class Question extends React.Component {
   }
 
   render() {
+    if (this.state.loaded === false) {
+      return (
+        <div>
+        <Spinner className="loading" name="cube-grid"/>
+        </div>
+      );
+    }
     // create list store 20 elements to render
     var list = [];
     // check questQuery state from store
@@ -81,7 +96,8 @@ class Question extends React.Component {
           list = this.randomList(originlist); 
           // return list
           return (
-            <div>
+            <div className="mainContent">
+            <Countdown/>
             <div>{this.printQuest(list)}</div>
               <div className="submit"><Button bsStyle="primary">Submit</Button></div>
             </div>         
@@ -94,7 +110,8 @@ class Question extends React.Component {
             list = this.randomList(originlist);
             // return list
             return (
-              <div>
+              <div className="mainContent">
+              <Countdown/>
               <div>{this.printQuest(list)}</div>
                 <div className="submit"><Button bsStyle="primary">Submit</Button></div>
               </div>   
@@ -107,7 +124,8 @@ class Question extends React.Component {
             list = this.randomList(originlist);
             // return list
             return (
-              <div>
+              <div className="mainContent">
+              <Countdown/>
               <div>{this.printQuest(list)}</div>
                 <div className="submit"><Button bsStyle="primary">Submit</Button></div>
               </div>   
