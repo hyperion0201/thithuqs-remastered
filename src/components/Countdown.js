@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Countdown.css';
-import { Button } from 'react-bootstrap';
 
 class Countdown extends Component{
   constructor(){
@@ -19,7 +18,7 @@ class Countdown extends Component{
 
 
   startTimer(){
-    if (this.timer == 0){
+    if (this.timer === 0){
       this.timer = setInterval(this.timeDown, 1000);
     }
   }
@@ -32,7 +31,7 @@ class Countdown extends Component{
       seconds: seconds,
     });
     // if we're at zero.
-    if (seconds == 0 ){
+    if (seconds === 0 ){
       clearInterval(this.timer);
     }
 

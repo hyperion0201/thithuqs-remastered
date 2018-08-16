@@ -2,8 +2,6 @@ import React from "react";
 import "./Content.css";
 import { Glyphicon } from "react-bootstrap";
 import { connect } from "react-redux";
-import Spinner from 'react-spinkit';
-import LoadingScreen from 'react-loading-screen'
 import Question from "./Question";
 import store from '../store/stateStore';
 import quest3 from './Question3';
@@ -11,10 +9,11 @@ import quest1 from './Question1';
 import quest2 from './Question2';
 import Countdown from './Countdown';
 import Footer from "./Footer";
+
 class Content extends React.Component { 
   constructor(props) {
     super(props);
-    this.state ={loaded:true}
+    this.state ={ loaded:false }
   }
   componentDidMount(){
     setTimeout(() => this.setState({ loaded: false }), 1500); 
@@ -43,21 +42,17 @@ class Content extends React.Component {
             <h4>
               {" "}
               Câu hỏi và câu trả lời mình dựa vào{" "}
-              <a href="#" target="blank">
+              <a href="https://drive.google.com/file/d/0B6hAMrMAqD_AM1JCSU9OdTd3Y2M/view" target="blank">
                 đây.
               </a>
             </h4>
           </div>
           <div className="footer">
-            <Footer/>
+            <Footer whereFooter ="footerhome"/>
           </div>
         </div>
       );
-    } else {
-     const { loaded } = this.state;
-     if (loaded) {
-       return null;
-     }
+    }
      else {
        return (
          <div>
@@ -66,12 +61,12 @@ class Content extends React.Component {
                   questionArray1={quest1}
                   questionArray2={quest2}
                   questionArray3={quest3}/>
+        <Footer whereFooter="footercontent"/>
          </div>
        );
      }
     }
   }
-}
 const mapStateToProps = state => ({
   startTest: state.startTest
 });

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import "./Question.css"
+import { Button } from 'react-bootstrap'
 class Question extends React.Component {
   constructor(props) {
     super(props);
@@ -35,8 +36,9 @@ class Question extends React.Component {
       // create name  for each group radio buttons
       let qname = "quest" + i;
       return (
-        <div className="contentLayout">
-          <h5 key={i} className="qNumber">
+        <div key={i} 
+              className="contentLayout">
+          <h5 className="qNumber">
             Câu {i+1}: {question.q}{" "}
           </h5>
           <div className="optionGroup">
@@ -76,12 +78,15 @@ class Question extends React.Component {
         // shuffle original array 1
         let originlist = this.shuffleQuest(this.props.questionArray1);
         // generate list with 20 elements
-          list = this.randomList(originlist);
+          list = this.randomList(originlist); 
           // return list
           return (
+            <div>
             <div>{this.printQuest(list)}</div>
+              <div className="submit"><Button bsStyle="primary">Submit</Button></div>
+            </div>         
           );
-      };
+      }
       case 2: {
           // shuffle original array 2
           let originlist = this.shuffleQuest(this.props.questionArray2);
@@ -89,9 +94,12 @@ class Question extends React.Component {
             list = this.randomList(originlist);
             // return list
             return (
+              <div>
               <div>{this.printQuest(list)}</div>
+                <div className="submit"><Button bsStyle="primary">Submit</Button></div>
+              </div>   
             );
-      };
+      }
       case 3: {
           // shuffle original array 3
           let originlist = this.shuffleQuest(this.props.questionArray3);
@@ -99,9 +107,12 @@ class Question extends React.Component {
             list = this.randomList(originlist);
             // return list
             return (
+              <div>
               <div>{this.printQuest(list)}</div>
+                <div className="submit"><Button bsStyle="primary">Submit</Button></div>
+              </div>   
             );
-      };
+      }
       default: return null;
     }
   }
