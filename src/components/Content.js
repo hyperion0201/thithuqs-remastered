@@ -7,22 +7,15 @@ import store from '../store/stateStore';
 import quest3 from './Question3';
 import quest1 from './Question1';
 import quest2 from './Question2';
-import Countdown from './Countdown';
 import Footer from "./Footer";
-
 class Content extends React.Component { 
   constructor(props) {
     super(props);
-    this.state ={ loaded:false }
   }
-  componentDidMount(){
-    setTimeout(() => this.setState({ loaded: false }), 1500); 
-  }
-  handleLoading(){
-    this.setState({loaded:true});
-  }
+  
   render() {
-   // console.log(this.props.startTest);
+   // console.log("loading status : ", this.state.loaded);  
+    console.log(this.props.startTest);
       if (this.props.startTest === false) {
       return (
         <div className="myHeader">
@@ -53,21 +46,21 @@ class Content extends React.Component {
         </div>
       );
     }
-     else {
+       else {
        return (
          <div>
-         <Countdown/>
         <Question store={store}
                   questionArray1={quest1}
                   questionArray2={quest2}
                   questionArray3={quest3}/>
-        <Footer whereFooter="footercontent"/>
          </div>
        );
-     }
+      }
+     
     }
   }
 const mapStateToProps = state => ({
-  startTest: state.startTest
+  startTest: state.startTest,
+  
 });
 export default connect(mapStateToProps)(Content);
