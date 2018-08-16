@@ -1,15 +1,28 @@
 import React from "react";
 import "./Content.css";
 import { Glyphicon } from "react-bootstrap";
-import MainContent from "./MainContent";
-import quest1 from "./Q1";
 import { connect } from "react-redux";
-class Content extends React.Component {
+import Question from "./Question";
+import store from '../store/stateStore';
+import quest3 from './Question3';
+import quest1 from './Question1';
+import quest2 from './Question2';
+import Countdown from './Countdown';
+import Footer from "./Footer";
+
+class Content extends React.Component { 
   constructor(props) {
     super(props);
+    this.state ={ loaded:false }
+  }
+  componentDidMount(){
+    setTimeout(() => this.setState({ loaded: false }), 1500); 
+  }
+  handleLoading(){
+    this.setState({loaded:true});
   }
   render() {
-    console.log(this.props.startTest);
+   // console.log(this.props.startTest);
       if (this.props.startTest === false) {
       return (
         <div className="myHeader">
@@ -29,18 +42,31 @@ class Content extends React.Component {
             <h4>
               {" "}
               Câu hỏi và câu trả lời mình dựa vào{" "}
-              <a href="#" target="blank">
+              <a href="https://drive.google.com/file/d/0B6hAMrMAqD_AM1JCSU9OdTd3Y2M/view" target="blank">
                 đây.
               </a>
             </h4>
           </div>
+          <div className="footer">
+            <Footer whereFooter ="footerhome"/>
+          </div>
         </div>
       );
-    } else {
-      return <MainContent details={quest1} />;
+    }
+     else {
+       return (
+         <div>
+         <Countdown/>
+        <Question store={store}
+                  questionArray1={quest1}
+                  questionArray2={quest2}
+                  questionArray3={quest3}/>
+        <Footer whereFooter="footercontent"/>
+         </div>
+       );
+     }
     }
   }
-}
 const mapStateToProps = state => ({
   startTest: state.startTest
 });
