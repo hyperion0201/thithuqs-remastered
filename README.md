@@ -15,7 +15,16 @@ Then i immediately chose with React, i thought how would it be built with React?
 
 ## Want to contribute?
 You can folk, submit an issue or pull requests are really appreciated.
+### Getting started
+Clone this repository.
+Then run:
 
+```
+$ npm install (or yarn install)      // initial node_modules
+$ npm start   (or yarn dev)          // start development server
+$ npm run build  (or yarn generate)  // build production files for deploy
+```
+Open <i>localhost:3000</i> and you are ready to go. Happy coding!
 ### License 
 
 [MIT](https://opensource.org/licenses/MIT) 
