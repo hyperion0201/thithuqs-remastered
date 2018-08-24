@@ -4,7 +4,8 @@ const initialState = {
   isNavOpen:false,
   startTest:false,
   questQuery: 0,
-  loaded: false
+  showResult:false,
+  stopTime: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -14,33 +15,49 @@ const reducer = (state = initialState, action) => {
     return {
       isNavOpen: true,
       startTest: false,
-      loaded:false,
-      questQuery:0
+      questQuery:0,
+      showResult:false,
+      stopTime:false
     };
     case "CLOSE":
     return {
       isNavOpen: false,
       startTest: false,
-      questQuery:0
+      questQuery:0,
+      showResult:false,
+      stopTime:false
     };
     case "QUEST1":
     return {
       questQuery:1,
-      startTest:true
+      startTest:true,
+      showResult:false,
+      stopTime:false
     
     };
     case "QUEST2":
     return {
       questQuery:2,
-      startTest: true
+      startTest: true,
+      showResult:false,
+      stopTime:false
     };
     case "QUEST3":
     return {
       questQuery:3,
-      startTest:true
+      startTest:true,
+      showResult:false,
+      stopTime:false
     };
+    case "SUBMIT": 
+    return {
+      stopTime: true
+    };
+    
     default: 
-    return state;
+    return {
+      ...state
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Countdown.css';
-
+import { connect } from 'react-redux';
 class Countdown extends Component{
   constructor(){
     super();
@@ -53,15 +53,21 @@ class Countdown extends Component{
     };
     return timeObj;
   }
-
+ 
   render(){
+    console.log(this.props.stopTime);
     return(
-      <div className="count-down">
+      <div className="countdown">
+      {this.props.stopTime ? clearInterval(this.timer): <div></div>}
       {this.startTimer()}
-      <p className="time-info"> <span>{this.state.time.m} : {this.state.time.s} </span></p>
+      <span className="timer">
+      {this.state.time.m} : {this.state.time.s}</span>
       </div>
     );
   }
 }
+const mapStateToProps = (state) => ({
+  stopTime: state.stopTime
+});
 
-export default Countdown;
+export default connect(mapStateToProps)(Countdown);

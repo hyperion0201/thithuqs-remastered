@@ -2,7 +2,7 @@ import React from 'react'
 import  './Sidebar.css';
 import { Glyphicon } from 'react-bootstrap'
 import { connect } from 'react-redux'
-
+import { Navbar } from 'react-bootstrap'
 class Sidebar extends React.Component{
   
   constructor(props){
@@ -42,25 +42,25 @@ class Sidebar extends React.Component{
   }
   render(){
     console.log(this.props.isNavOpen);
-    console.log("question queried :" , this.props.questQuery);
+    console.log(this.props.stopTime);
     return( 
       <div>
-          <div className="myNav">
-            <span className="gly-icon">
-            <Glyphicon glyph="glyphicon glyphicon-th-list" onClick={this.props.isNavOpen ? this.closeNav : this.openNav}></Glyphicon>
-            </span>
-            <span className="brand">Thi Thử Quân Sự</span>
-            <hr className="hline"/>
-          </div>
+      <div className="navbar">
+      <Navbar fixedTop={true}>
+      <span className="gly-icon">
+      <Glyphicon glyph="glyphicon glyphicon-th-list" onClick={this.props.isNavOpen ? this.closeNav : this.openNav}></Glyphicon>
+      </span>
+      <p className="brand">Thi Thử Quân Sự</p>
+    </Navbar>
+    </div>
+          
             <div className="sidenav" ref={(nav)=>{
               this.mySidebar = nav;
             }}>
-            <div className="r-group">
               <span className="rectangle"
                  onClick={this.queryQuestion1}>Học phần 1</span><br/>             
               <span className="rectangle" onClick={this.queryQuestion2}>Học phần 2</span><br/>
-              <span className="rectangle" onClick={this.queryQuestion3}>Học phần 3</span><br/>
-              </div>
+              <span className="rectangle" onClick={this.queryQuestion3}>Học phần 3</span><br/>    
             </div>
              
       </div>

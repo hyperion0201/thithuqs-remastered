@@ -1,0 +1,13 @@
+.result{
+width: 75%;
+  table-layout: auto !important ;
+}
+.thead{
+  font-weight: bold;
+}
+.score{
+  padding: 12px;
+  background: cornflowerblue;
+  display: inline-block;
+  font-weight: bold;
+}
