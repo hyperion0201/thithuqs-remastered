@@ -1,7 +1,8 @@
 .footerhome{
   position: fixed !important;
   left: 0;  
-  bottom: 10px;
+  
+  bottom: 5px;
   width: 100%;
   background: white;
   text-align: center;
@@ -9,18 +10,34 @@
 .footercontent{
   position: relative;
   left: 0%;
-  bottom: 10px;
+  bottom: 0px;
   width: 100%;
   background: white;
   text-align: center;
 }
 .whythis{
   font-style: italic;
-  font-size: 13px;
+  font-size: 14px;
   color: blue
 }
 
 .author{
-  font-size: 13px;
-  color: black
+  font-size: 15px;
+  font-style: italic;
+  color:darkcyan;
+}
+.f{
+  margin: auto;
+}
+.react{
+  color:mediumblue
+}
+.es6{
+  color: darkgoldenrod
+}
+.redux{
+  color: red
+}
+.webpack{
+  color: royalblue
 }

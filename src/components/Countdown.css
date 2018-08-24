@@ -1,12 +1,11 @@
-.count-down{
-  margin-bottom: 20px;
-  text-align: center;
+.timer{
+  display: inline-block;
+  padding: 12px;
+  background: cadetblue;
+  color : white;
+  border-radius :10px; 
 }
-.time-info{
+.countdown{
   text-align: center;
-}
-.time-info span{
-  border-radius: 15px;
-  padding:10px;
-  background:aqua
+  margin: 10px 0 10px;
 }

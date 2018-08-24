@@ -9,9 +9,6 @@ import quest1 from './Question1';
 import quest2 from './Question2';
 import Footer from "./Footer";
 class Content extends React.Component { 
-  constructor(props) {
-    super(props);
-  }
   
   render() {
    // console.log("loading status : ", this.state.loaded);  
