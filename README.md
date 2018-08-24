@@ -5,11 +5,12 @@ One day, i decided to learn JavaScript, then what front-end library/framework sh
 Then i immediately chose with React, i thought how would it be built with React? Is it easier or harder than the static site using only HTML/CSS? 
 ### What i learned
 -  ECMAScript 6 features (arrow functions, import and export, template literals)
-- React fundamentals (Components, Props, Lifecycle,...)
+- React fundamentals (State, Components, Props, Lifecycle,...)
 - Redux (connecting components, managing states, dispatching actions)
 - Webpack (building bundle file for production to optimize performance)
 
- ### Status : <b><i>not ready</b></i>
+ ### Status : <b><i>ready</b></i>
+ Site is ready on : [here](https://hyperion0201.github.io/thithuqs-remastered/)
 
 
 ## Want to contribute?
