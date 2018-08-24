@@ -1,14 +1,17 @@
 import React from "react";
 import "./Content.css";
 import { Glyphicon } from "react-bootstrap";
-import MainContent from "./MainContent";
-import quest1 from "./Q1";
 import { connect } from "react-redux";
-class Content extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+import Question from "./Question";
+import store from '../store/stateStore';
+import quest3 from './Question3';
+import quest1 from './Question1';
+import quest2 from './Question2';
+import Footer from "./Footer";
+class Content extends React.Component { 
+  
   render() {
+   // console.log("loading status : ", this.state.loaded);  
     console.log(this.props.startTest);
       if (this.props.startTest === false) {
       return (
@@ -29,19 +32,32 @@ class Content extends React.Component {
             <h4>
               {" "}
               Câu hỏi và câu trả lời mình dựa vào{" "}
-              <a href="#" target="blank">
+              <a href="https://drive.google.com/file/d/0B6hAMrMAqD_AM1JCSU9OdTd3Y2M/view" target="blank">
                 đây.
               </a>
             </h4>
           </div>
+          <div className="footer">
+            <Footer whereFooter ="footerhome"/>
+          </div>
         </div>
       );
-    } else {
-      return <MainContent details={quest1} />;
+    }
+       else {
+       return (
+         <div>
+        <Question store={store}
+                  questionArray1={quest1}
+                  questionArray2={quest2}
+                  questionArray3={quest3}/>
+         </div>
+       );
+      }
+     
     }
   }
-}
 const mapStateToProps = state => ({
-  startTest: state.startTest
+  startTest: state.startTest,
+  
 });
 export default connect(mapStateToProps)(Content);

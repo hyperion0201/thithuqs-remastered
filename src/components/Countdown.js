@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Countdown.css';
-import { Button } from 'react-bootstrap';
-
+import { connect } from 'react-redux';
 class Countdown extends Component{
   constructor(){
     super();
@@ -19,7 +18,7 @@ class Countdown extends Component{
 
 
   startTimer(){
-    if (this.timer == 0){
+    if (this.timer === 0){
       this.timer = setInterval(this.timeDown, 1000);
     }
   }
@@ -32,7 +31,7 @@ class Countdown extends Component{
       seconds: seconds,
     });
     // if we're at zero.
-    if (seconds == 0 ){
+    if (seconds === 0 ){
       clearInterval(this.timer);
     }
 
@@ -54,16 +53,21 @@ class Countdown extends Component{
     };
     return timeObj;
   }
-
+ 
   render(){
+    console.log(this.props.stopTime);
     return(
-      <div className="count-down">
+      <div className="countdown">
+      {this.props.stopTime ? clearInterval(this.timer): <div></div>}
       {this.startTimer()}
-      <br/><br/>
-      <p className="time-info"> <span>{this.state.time.m} : {this.state.time.s} </span></p>
+      <span className="timer">
+      {this.state.time.m} : {this.state.time.s}</span>
       </div>
     );
   }
 }
+const mapStateToProps = (state) => ({
+  stopTime: state.stopTime
+});
 
-export default Countdown;
+export default connect(mapStateToProps)(Countdown);

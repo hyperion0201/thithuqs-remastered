@@ -1,0 +1,53 @@
+.qNumber {
+  font-size: 13px;
+  color: forestgreen;
+  font-weight: bold;
+}
+.optionGroup{
+  font-weight: normal;
+}
+label{
+  font-weight: normal;
+}
+.questLayout {
+  margin-left: 10px;
+}
+.submit{
+  text-align:  left;
+  margin-top:10px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.footer{
+  position: initial;
+}
+
+
+  @keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translateX(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ } 
+.mainContent{
+  animation: fadeInLeft 0.5s;
+}
+
+.loading{
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+margin: auto;
+width: 50px !important;
+height: 50px !important;
+}
+.focus{
+  border: solid 2px #0000FF;
+  background-color:#e5e5e5;
+}

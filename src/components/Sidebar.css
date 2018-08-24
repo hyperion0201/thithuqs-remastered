@@ -1,26 +1,16 @@
 .sidenav {
   height: 100%;
   width: 0;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   z-index: 1;
-  top: 60px;
   left: 0;
   background-color: white;
   overflow-x: hidden;
-  transition: 0.2s;
-  padding-top: 60px;
-  text-align:center;
-}
-
-
-
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  transition: 0.3s;
+ justify-content: center;
+ align-items: center;
 }
 
 @media screen and (max-height: 450px) {
@@ -28,14 +18,8 @@
 .sidenav a {font-size: 18px;}
 }
 
-.spanStyle{
-  font-size: 30px;
-  cursor: pointer;
-  text-align: center; 
-}
 
 .rectangle{
-margin-bottom: 10px;
 display: inline-block;
 padding: 12px;
 background: cadetblue;
@@ -45,31 +29,26 @@ cursor: pointer;
 }
 
 .gly-icon{
-  
   float: left;
   cursor: pointer;
   margin-top:12px;
-  margin-left: 10px;
   font-size: 20px;
 }
 
 .brand{
-  text-align: center;
-  display: inline-block;
   margin-top: 10px;
-  font-size: 25px; 
-  color: teal
+  font-size: 20px;
+  font-weight: bold;
+  color: teal;
 }
-
-.myNav{
+.navbar{
+  margin-bottom: 0%;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-
-.hline{
-  margin-top:5px;
+.container{
+  width: 100%;
 }
 
-.r-group{
-
-}

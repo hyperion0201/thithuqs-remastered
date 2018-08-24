@@ -2,7 +2,10 @@ import { createStore } from 'redux'
 
 const initialState = {
   isNavOpen:false,
-  startTest:false
+  startTest:false,
+  questQuery: 0,
+  showResult:false,
+  stopTime: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -11,20 +14,50 @@ const reducer = (state = initialState, action) => {
     case "OPEN": 
     return {
       isNavOpen: true,
-      startTest: false
+      startTest: false,
+      questQuery:0,
+      showResult:false,
+      stopTime:false
     };
     case "CLOSE":
     return {
       isNavOpen: false,
-      startTest: false
+      startTest: false,
+      questQuery:0,
+      showResult:false,
+      stopTime:false
     };
-    case "START":
+    case "QUEST1":
     return {
-      //  isNavOpen:false,
-        startTest: true
+      questQuery:1,
+      startTest:true,
+      showResult:false,
+      stopTime:false
+    
     };
+    case "QUEST2":
+    return {
+      questQuery:2,
+      startTest: true,
+      showResult:false,
+      stopTime:false
+    };
+    case "QUEST3":
+    return {
+      questQuery:3,
+      startTest:true,
+      showResult:false,
+      stopTime:false
+    };
+    case "SUBMIT": 
+    return {
+      stopTime: true
+    };
+    
     default: 
-    return state;
+    return {
+      ...state
+    }
   }
 }
 

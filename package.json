@@ -10,8 +10,11 @@
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
+    "react-loading-screen": "0.0.17",
+    "react-radio-group": "^3.0.3",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
+    "react-spinkit": "^3.0.0",
     "redux": "^4.0.0",
     "typeface-roboto": "0.0.54",
     "webpack": "^3.11.0"
