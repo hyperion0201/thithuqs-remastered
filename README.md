@@ -10,7 +10,9 @@ Then i immediately chose with React, i thought how would it be built with React?
 - Webpack (building bundle file for production to optimize performance)
 
  ### Status : <b><i>ready</b></i>
- Site is ready on : [here](https://hyperion0201.github.io/thithuqs-remastered/)
+ Site is ready on : [GitHub page](https://hyperion0201.github.io/thithuqs-remastered/)
+ 
+ An Android (WebView) version is also made. Get it [here](https://github.com/hyperion0201/thithuqs-remastered/releases/download/v1.0/ThiThuQS-RM.apk).
 
 
 ## Want to contribute?
