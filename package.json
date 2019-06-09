@@ -11,7 +11,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.4.2",
     "react-loading-screen": "0.0.17",
     "react-radio-group": "^3.0.3",
     "react-redux": "^5.0.7",
